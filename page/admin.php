@@ -42,7 +42,7 @@ $commentaire = $pdo->query("SELECT * FROM commentaire ORDER BY utilisateur_iduti
                         <td><?= $user->nom ?></td>
                         <td><?= $user->email ?></td>
                         <td><?= $user->role ?></td>
-                        <td><a href="editionProfil.php=<?= $user->idutilisateur ?>"><button>Editer</button><br />
+                        <td><a href="editionProfil.php?idutilisateur=<?= $user->idutilisateur ?>"><button>Editer</button><br />
                                 <a href="admin.php?supprime=<?= $user->idutilisateur ?>"><button>Supprimer</button></a> </td>
                     </tr>
                 <?php } ?>

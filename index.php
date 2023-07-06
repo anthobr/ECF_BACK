@@ -13,7 +13,9 @@
     <?php
     include_once('piece/header.php');
     ?>
+    <br />
     <H1>Bienvenue chez Souhaits</H1>
+    <br />
     <?php
     include_once('piece/footer.php');
     ?>

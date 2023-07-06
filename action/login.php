@@ -10,11 +10,13 @@ if (isset($_POST['formconnection'])) {
         $user = $statement->fetch();
 
         if ($user) {
-            if (password_verify($_POST['mpconnect'], $user->mp)) {
 
+            if (password_verify($_POST['mpconnect'], $user->mp)) {
+                session_start();
                 $_SESSION['idutilisateur'] = $user->idutilisateur;
                 $_SESSION['nom'] = $user->nom;
                 $_SESSION['email'] = $user->email;
+                $_SESSION['role'] = $user->role;
                 header("Location: profil.php?idutilisateur=" . $_SESSION['idutilisateur']);
             } else {
                 $erreur = "Mauvais mail ou mauvais mot de passe";

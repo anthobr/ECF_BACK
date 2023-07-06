@@ -32,7 +32,7 @@ if (isset($_GET['idutilisateur']) and $_GET['idutilisateur'] > 0) {
             <?php
             if (isset($_SESSION['idutilisateur']) and $utilisateur->idutilisateur == $_SESSION['idutilisateur']) {
             ?>
-                <a href="editionProfil.php"><button>Editer mon profil</button></a>
+                <a href="editionProfil.php?idutilisateur=<?= $_SESSION['idutilisateur'] ?>"><button>Editer mon profil</button></a>
             <?php
             }
             ?>

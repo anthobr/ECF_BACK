@@ -1,5 +1,6 @@
 <?php
 require_once '../include/database.php';
+require_once '../action/supprimer.php';
 
 $article = $pdo->query('SELECT * FROM article ORDER BY idarticle DESC');
 
@@ -19,7 +20,9 @@ $article = $pdo->query('SELECT * FROM article ORDER BY idarticle DESC');
 <body>
     <ul>
         <?php while ($a = $article->fetch()) { ?>
-            <li><a href="article.php?idarticle=<?= $a->idarticle ?>"><?= $a->nom ?></a> | <a href="commentaire.php?edit=<?= $a->idarticle ?>">Modifier</a> - <a href="">Supprimer</a> </li><br />
+            <li><a href="article.php?idarticle=<?= $a->idarticle ?>"><?= $a->nom ?></a> | <a href="commentaire.php?edit=<?= $a->idarticle ?>">Modifier</a> -
+                <a href="../action/supprimer.php?idarticle=<?= $a->idarticle ?>">Supprimer</a>
+            </li><br />
         <?php  } ?>
     </ul>
 </body>
